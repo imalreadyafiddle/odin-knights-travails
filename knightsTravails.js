@@ -90,9 +90,9 @@ function knightsTravails(start, end) {
 
 console.log("Knights Travails");
 
-console.log("----------------------------------------");
+console.log("\n----------------------------------------");
 console.log("Test 1");
-console.log("\nStart: [0, 0], End: [3, 3]");
+console.log("Start: [0, 0], End: [3, 3]\n");
 console.log("Expected: \nYou made it in 2 moves! Here's your path:");
 console.log("[0, 0]");
 console.log("[1, 2]");
@@ -100,9 +100,9 @@ console.log("[3, 3]");
 console.log("\nActual:");
 knightsTravails([0, 0], [3, 3]);
 
-console.log("----------------------------------------");
+console.log("\n----------------------------------------");
 console.log("Test 2");
-console.log("\nStart: [3, 3], End: [0, 0]");
+console.log("Start: [3, 3], End: [0, 0]\n");
 console.log("Expected: \nYou made it in 2 moves! Here's your path:");
 console.log("[3, 3]");
 console.log("[1, 2]");
@@ -110,9 +110,9 @@ console.log("[0, 0]");
 console.log("\nActual:");
 knightsTravails([3, 3], [0, 0]);
 
-console.log("----------------------------------------");
+console.log("\n----------------------------------------");
 console.log("Test 3");
-console.log("\nStart: [0, 0], End: [7, 7]");
+console.log("Start: [0, 0], End: [7, 7]\n");
 console.log("Expected: \nYou made it in 6 moves! Here's your path:");
 console.log("[0, 0]");
 console.log("[1, 2]");
@@ -124,25 +124,25 @@ console.log("[7, 7]");
 console.log("\nActual:");
 knightsTravails([0, 0], [7, 7]);
 
-console.log("----------------------------------------");
+console.log("\n----------------------------------------");
 console.log("Test 4");
-console.log("\nStart: [0, 0], End: [1, 2]");
+console.log("Start: [0, 0], End: [1, 2]\n");
 console.log("Expected: \nYou made it in 1 moves! Here's your path:");
 console.log("[0, 0]");
 console.log("[1, 2]");
 console.log("\nActual:");
 knightsTravails([0, 0], [1, 2]);
 
-console.log("----------------------------------------");
+console.log("\n----------------------------------------");
 console.log("Test 5");
-console.log("\nStart: [-1, -1], End: [5, 5]");
+console.log("Start: [-1, -1], End: [5, 5]\n");
 console.log("Expected: \nInvalid starting position");
 console.log("\nActual:");
 knightsTravails([-1, -1], [5, 5]);
 
-console.log("----------------------------------------");
+console.log("\n----------------------------------------");
 console.log("Test 6");
-console.log("\nStart: [0, 0], End: [9, 9]");
+console.log("Start: [0, 0], End: [9, 9]\n");
 console.log("Expected: \nInvalid ending position");
 console.log("\nActual:");
 knightsTravails([0, 0], [9, 9]);
