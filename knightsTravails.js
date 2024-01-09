@@ -29,36 +29,28 @@ function knightsTravails(start, end) {
 
   return path;
 
-  //helper functions
   function createGraph() {
     const graph = {};
     for (let i = 0; i < 8; i++) {
       for (let j = 0; j < 8; j++) {
         graph[[i, j]] = [];
-        if (i - 2 >= 0 && j - 1 >= 0) {
-          graph[[i, j]].push([i - 2, j - 1]);
-        }
-        if (i - 2 >= 0 && j + 1 < 8) {
-          graph[[i, j]].push([i - 2, j + 1]);
-        }
-        if (i - 1 >= 0 && j - 2 >= 0) {
-          graph[[i, j]].push([i - 1, j - 2]);
-        }
-        if (i - 1 >= 0 && j + 2 < 8) {
-          graph[[i, j]].push([i - 1, j + 2]);
-        }
-        if (i + 1 < 8 && j - 2 >= 0) {
-          graph[[i, j]].push([i + 1, j - 2]);
-        }
-        if (i + 1 < 8 && j + 2 < 8) {
-          graph[[i, j]].push([i + 1, j + 2]);
-        }
-        if (i + 2 < 8 && j - 1 >= 0) {
-          graph[[i, j]].push([i + 2, j - 1]);
-        }
-        if (i + 2 < 8 && j + 1 < 8) {
-          graph[[i, j]].push([i + 2, j + 1]);
-        }
+        const moves = [
+          [-2, -1],
+          [-2, 1],
+          [-1, -2],
+          [-1, 2],
+          [1, -2],
+          [1, 2],
+          [2, -1],
+          [2, 1],
+        ];
+        moves.forEach(([dx, dy]) => {
+          const x = i + dx;
+          const y = j + dy;
+          if (x >= 0 && x < 8 && y >= 0 && y < 8) {
+            graph[[i, j]].push([x, y]);
+          }
+        });
       }
     }
     return graph;
@@ -97,57 +89,60 @@ function knightsTravails(start, end) {
 }
 
 console.log("Knights Travails");
+
 console.log("----------------------------------------");
 console.log("Test 1");
 console.log("\nStart: [0, 0], End: [3, 3]");
-console.log("Expected: You made it in 2 moves! Here's your path:");
+console.log("Expected: \nYou made it in 2 moves! Here's your path:");
 console.log("[0, 0]");
 console.log("[1, 2]");
 console.log("[3, 3]");
 console.log("\nActual:");
 knightsTravails([0, 0], [3, 3]);
+
 console.log("----------------------------------------");
 console.log("Test 2");
 console.log("\nStart: [3, 3], End: [0, 0]");
-console.log("Expected: You made it in 2 moves! Here's your path:");
+console.log("Expected: \nYou made it in 2 moves! Here's your path:");
 console.log("[3, 3]");
 console.log("[1, 2]");
 console.log("[0, 0]");
 console.log("\nActual:");
 knightsTravails([3, 3], [0, 0]);
+
 console.log("----------------------------------------");
 console.log("Test 3");
 console.log("\nStart: [0, 0], End: [7, 7]");
-console.log("Expected: You made it in 6 moves! Here's your path:");
+console.log("Expected: \nYou made it in 6 moves! Here's your path:");
 console.log("[0, 0]");
 console.log("[1, 2]");
-console.log("[2, 4]");
-console.log("[3, 6]");
-console.log("[5, 7]");
-console.log("[7, 6]");
-console.log("[6, 4]");
-console.log("[7, 2]");
-console.log("[6, 0]");
+console.log("[0, 4]");
+console.log("[1, 6]");
+console.log("[3, 5]");
+console.log("[5, 6]");
 console.log("[7, 7]");
 console.log("\nActual:");
 knightsTravails([0, 0], [7, 7]);
+
 console.log("----------------------------------------");
 console.log("Test 4");
 console.log("\nStart: [0, 0], End: [1, 2]");
-console.log("Expected: You made it in 1 moves! Here's your path:");
+console.log("Expected: \nYou made it in 1 moves! Here's your path:");
 console.log("[0, 0]");
 console.log("[1, 2]");
 console.log("\nActual:");
 knightsTravails([0, 0], [1, 2]);
+
 console.log("----------------------------------------");
 console.log("Test 5");
 console.log("\nStart: [-1, -1], End: [5, 5]");
-console.log("Expected: Invalid starting position");
+console.log("Expected: \nInvalid starting position");
 console.log("\nActual:");
-knightsTravails([0, 0], [5, 5]);
+knightsTravails([-1, -1], [5, 5]);
+
 console.log("----------------------------------------");
 console.log("Test 6");
 console.log("\nStart: [0, 0], End: [9, 9]");
-console.log("Expected: Invalid ending position");
+console.log("Expected: \nInvalid ending position");
 console.log("\nActual:");
 knightsTravails([0, 0], [9, 9]);
